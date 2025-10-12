@@ -1,0 +1,30 @@
+{
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^5.1.0",
+    "mongodb": "^6.20.0",
+    "mongoose": "^8.19.1",
+    "morgan": "^1.10.1",
+    "nodemon": "^3.1.10"
+  },
+  "name": "kevin_ecomly_server",
+  "version": "1.0.0",
+  "description": "well well well",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/kuuz4n/kuuzan_ecomly_server.git"
+  },
+  "author": "kevon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kuuz4n/kuuzan_ecomly_server/issues"
+  },
+  "homepage": "https://github.com/kuuz4n/kuuzan_ecomly_server#readme"
+}
