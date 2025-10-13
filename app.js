@@ -8,23 +8,23 @@ require('dotenv').config();
 const app = express();
 const port = process.env.PORT
 const hostname = process.env.HOST
-
+const mongodbConnectionString = process.env.MONGODB_CONNECTION_STRING;
+const API = process.env.API_URL;
 
 app.use(bodyParser.json());
 app.use(morgan('tiny'));
 app.use(cors());
 
-app.get('/', (req, res) => {
-    return res.status(404).send("WHOMEGALUL");
-});
+const authRoutes = require('./routes/auth');
 
-app.get('/watch/videos/:id', (req, res) => {
-    return res.json({
-        videoId: req.params.id
-    });
-});
+app.use(`${API}/`, authRoutes);
 
-mongoose.connect();
+
+mongoose.connect(mongodbConnectionString).then(() => {
+    console.log('Connected to MongoDB');
+}).catch(err => {
+    console.error('Error connecting to MongoDB:', err);
+});
 
 
 app.listen(port, hostname, () => {
