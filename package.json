@@ -5,6 +5,7 @@
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
     "express": "^5.1.0",
+    "express-jwt": "^8.5.1",
     "express-validator": "^7.2.1",
     "googleapis": "^162.0.0",
     "jsonwebtoken": "^9.0.2",
