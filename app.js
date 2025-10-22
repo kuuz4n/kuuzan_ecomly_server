@@ -6,14 +6,13 @@ const mongoose = require("mongoose");
 require("dotenv").config();
 const authJwt = require("./middlewares/jwt");
 const errorHandler = require("./middlewares/error_handler");
-const { Product } = require("./models/product");
-const { Review } = require("./models/review");
 
 const app = express();
 const port = process.env.PORT;
 const hostname = process.env.HOST;
 const mongodbConnectionString = process.env.MONGODB_CONNECTION_STRING;
 const API = process.env.API_URL;
+require("./helpers/cron_job");
 
 app.use(bodyParser.json());
 app.use(morgan("tiny"));
