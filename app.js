@@ -23,10 +23,14 @@ app.use(errorHandler);
 const authRoutes = require("./routes/auth");
 const userRoutes = require("./routes/users");
 const adminRoutes = require("./routes/admin");
+const categoriesRoutes = require("./routes/categories");
+const productRoutes = require("./routes/products");
 
 app.use(`${API}/`, authRoutes);
 app.use(`${API}/users`, userRoutes);
 app.use(`${API}/admin`, adminRoutes);
+app.use(`${API}/categories`, categoriesRoutes);
+app.use(`${API}/products`, productRoutes);
 app.use("/public", express.static(__dirname + "/public"));
 
 mongoose
