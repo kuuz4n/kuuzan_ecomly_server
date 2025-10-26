@@ -62,12 +62,6 @@ async function isRevoked(req, token) {
   });
 
   const adminRouteRegex = new RegExp(`^${API}\/admin(\/|$)`);
-  console.log("Route Check:", {
-    originalUrl: req.originalUrl,
-    isAdmin: tokenPayload?.isAdmin,
-    matchesAdminRoute: adminRouteRegex.test(req.originalUrl),
-    pattern: adminRouteRegex.toString(),
-  });
 
   const adminFault =
     !tokenPayload?.isAdmin && adminRouteRegex.test(req.originalUrl);

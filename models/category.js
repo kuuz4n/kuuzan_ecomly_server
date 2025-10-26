@@ -4,7 +4,7 @@ const categorySchema = new Schema({
   name: { type: String, required: true, unique: true },
   image: { type: String, required: true },
   colour: { type: String, default: "#000000" },
-  markedForDeleation: { type: Boolean, default: false },
+  markedForDeletion: { type: Boolean, default: false },
 });
 
 categorySchema.set("toJSON", { virtuals: true });
