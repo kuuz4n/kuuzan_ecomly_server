@@ -41,8 +41,22 @@ exports.sendMail = async (email, subject, body, success, errorMessage) => {
       from: SENDER_EMAIL,
       to: email,
       subject: subject,
-      text: body,
     };
+
+    // Support passing either a plain string body or an object from the mail builder
+    // If body is an object, prefer body.text and body.html. If it's a string, use as text.
+    if (typeof body === "string") {
+      mailOptions.text = body;
+    } else if (body && typeof body === "object") {
+      // If caller didn't provide a subject (passed null/undefined), allow builder.subject to be used
+      if ((!subject || subject === "") && body.subject) {
+        mailOptions.subject = body.subject;
+      }
+      mailOptions.text = body.text || JSON.stringify(body);
+      if (body.html) mailOptions.html = body.html;
+    } else {
+      mailOptions.text = "";
+    }
 
     // Send email
     const info = await transporter.sendMail(mailOptions);

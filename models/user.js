@@ -14,6 +14,7 @@ const userSchema = Schema({
       message: "Invalid email format",
     },
   },
+  paymentCustomerId: String,
   passwordHash: { type: String, required: true },
   street: String,
   apartment: String,

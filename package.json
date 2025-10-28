@@ -15,7 +15,8 @@
     "multer": "^2.0.2",
     "node-cron": "^4.2.1",
     "nodemailer": "^7.0.9",
-    "nodemon": "^3.1.10"
+    "nodemon": "^3.1.10",
+    "stripe": "^19.1.0"
   },
   "name": "kevin_ecomly_server",
   "version": "1.0.0",

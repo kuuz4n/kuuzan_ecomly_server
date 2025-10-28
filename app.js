@@ -27,12 +27,16 @@ const userRoutes = require("./routes/users");
 const adminRoutes = require("./routes/admin");
 const categoriesRoutes = require("./routes/categories");
 const productRoutes = require("./routes/products");
+const checkoutRoutes = require("./routes/checkout");
+const ordersRoutes = require("./routes/orders");
 
 app.use(`${API}/`, authRoutes);
 app.use(`${API}/users`, userRoutes);
 app.use(`${API}/admin`, adminRoutes);
 app.use(`${API}/categories`, categoriesRoutes);
 app.use(`${API}/products`, productRoutes);
+app.use(`${API}/checkout`, checkoutRoutes);
+app.use(`${API}/orders`, ordersRoutes);
 app.use("/public", express.static(__dirname + "/public"));
 
 mongoose
